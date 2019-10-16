@@ -20,7 +20,7 @@
         <p class="card-text">Queremos melhorar cada dia mais para oferecer um serviço de altissima qualidade. Nos informe sua situação para podemos te ajudar.</p>
         </div>
         <div class="card-footer">
-        <a href="#" class="btn btn-primary btn-sm">Reclamar</a>
+            <%= link_to "Reclamar", new_reclamacao_path, :class => 'btn btn-primary btn-sm' %>
         </div>
     </div>
     </div>
@@ -32,11 +32,11 @@
         <p class="card-text">Acompanhe as reclamações feitas até o momento por cada usuario, oferecendo um melhor atendimento ao cliente.</p>
         </div>
         <div class="card-footer">
-        <a href="#" class="btn btn-primary btn-sm">Acompanhar</a>
+            <%= link_to "Acompanhar", {controller: "reclamacao", action: "index"}, :class => 'btn btn-primary btn-sm' %>
         </div>
     </div>
     </div>
-    <!-- /.col-md-4 -->      
+    <!-- /.col-md-4 -->
 
 </div>
 <!-- /.row -->

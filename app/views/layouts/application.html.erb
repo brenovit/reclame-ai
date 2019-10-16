@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= content_for?(:title) ? yield(:title) : "Myapp" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "ReclameAi!" %></title>
     <meta name="description" content="">
     <meta name="author" content="">
     <%= stylesheet_link_tag    "application", :media => "all" %>
@@ -22,15 +22,17 @@
     </header>
 
     <div id="main" role="main">
-      <div class="container">      
+      <br /><br />
+      <div class="container">
         <%= yield %>       
       </div> <!--! end of .container -->
-
+      
+      <br />
       <footer class="py-5 bg-dark">
         <div class="container">
           <p class="m-0 text-center text-white">Copyright &copy; brenovit 2019</p>
         </div>
       </footer>
-    </div> <!--! end of #main -->
+    </div>
   </body>
 </html>

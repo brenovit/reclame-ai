@@ -1,5 +1,5 @@
 <div class="container">
-    <% if @reclamacao.nil? %>
+    <% if @reclamacao.nil? || @reclamacao.empty? %>
         <div class="card text-white bg-secondary my-5 py-4 text-center">
             <div class="card-body">
                 <p class="text-white m-0">Nenhuma reclamação registrada!</p>
@@ -27,8 +27,9 @@
                         <td><%=rec.titulo%></td>
                         <td><%=rec.cep%></td>
                         <td><%=rec.ip%></td>
-                        <td><%=rec.created_at.strftime("%d/%m/%Y")%></td>
-                        <td><%= link_to rec.id, reclamacao_path(rec) %></td>
+                        <td><%=rec.created_at.strftime("%d/%m/%Y")%>
+                        </td><td><%=rec.suspeito == 'S' ? 'SIM' : 'NÃO' %></td>
+                        <td><%= link_to "Visualizar", reclamacao_path(rec) %></td>
                     </tr>
                 <% end %>
             </tbody>

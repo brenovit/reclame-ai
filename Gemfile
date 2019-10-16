@@ -22,7 +22,7 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 # Use Bootstrap
-gem 'bootstrap', '~> 4.0.0' 
+gem 'bootstrap', '~> 4.3.1' 
 # Use jquery
 gem 'jquery-rails'
 gem 'faraday', '~> 0.17.0'

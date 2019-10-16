@@ -1,4 +1,4 @@
-<%= link_to "Reclame Ai", root_path, :class => 'navbar-brand' %>
+<%= link_to "Reclame Ai!", root_path, :class => 'navbar-brand' %>
 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
 </button>
@@ -8,10 +8,10 @@
         <%= link_to "Home", root_path, :class => 'nav-link' %>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="#">Reclamar</a>
+        <%= link_to "Reclamar", new_reclamacao_path, :class => 'nav-link' %>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="#">Visualizar</a>
+        <%= link_to "Visualizar", {controller: "reclamacao", action: "index"}, :class => 'nav-link' %>
     </li>          
 </ul>
 </div>

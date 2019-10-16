@@ -1,3 +1,11 @@
+<% if flash[:mensagem] %>    
+    <div class="alert alert-info alert-dismissible fade show" role="alert">
+        <%= flash[:mensagem] %>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<% end %>
 <h3>Registrar Reclamação</h3>
 <hr>
 <%= form_with html:{class:"form", role:"form"}, scope: :reclamacao, url:reclamacao_index_path, local: true do |form| %>
@@ -5,15 +13,18 @@
     <div class="form-row">
         <div class="form-group col-md-6">
             <%= form.label :nome %>
-            <%= form.text_field :nome, class: 'form-control' %>
+            <%= form.text_field :nome, type:'text',
+                class: 'form-control', placeholder:'Nome completo' %>
         </div>
         <div class="form-group col-md-2">
             <%= form.label :cep %>
-            <%= form.text_field :cep, class: 'form-control' %>
+            <%= form.text_field :cep,type:'text', 
+                class: 'form-control', placeholder:'40000900'%>
         </div>
         <div class="form-group col-md-4">
             <%= form.label :email %>
-            <%= form.text_field :email, class: 'form-control' %>
+            <%= form.text_field :email,type:'text',
+                class: 'form-control', placeholder:'email@email.com' %>
         </div>
     </div>
 
@@ -21,24 +32,24 @@
         <div class="form-group col-md-4">
             <%= form.label :telefone %>
             <%= form.text_field :telefone, 
-                class: 'form-control', type:'text', placeholder:'Digite o seu telefone de contato', maxlength:'15' %>
+                class: 'form-control', type:'text', placeholder:'DDD + Número', maxlength:'15' %>
         </div>
 
         <div class="form-group col-md-4">
             <%= form.label "Código Pedido" %>
             <%= form.text_field :cod_pedido, 
-                class: 'form-control', type:'text', placeholder:'Digite o número do pedido', maxlength:'40' %>
+                class: 'form-control', type:'text', placeholder:'WXZ123456', maxlength:'40' %>
         </div>
     </div>
 
     <div class="form-group">
         <%= form.label :título %>
         <%= form.text_field :titulo,
-            class: 'form-control', type:'text', placeholder:'Digite o título da reclamação', maxlength:'40' %>
+            class: 'form-control', type:'text', placeholder:'Informe o título da reclamação', maxlength:'40' %>
     </div>
 
     <div class="form-group">
-        <%= form.label :reclamação %><br>
+        <%= form.label :descrição %><br>
         <%= form.text_area :descricao,  class:'form-control' %>    
     </div>   
 

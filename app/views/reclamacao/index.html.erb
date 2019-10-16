@@ -1,3 +1,12 @@
+<% if flash[:mensagem] %>    
+    <div class="alert alert-info alert-dismissible fade show" role="alert">
+        <%= flash[:mensagem] %>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<% end %>
+
 <div class="container">
     <% if @reclamacao.nil? || @reclamacao.empty? %>
         <div class="card text-white bg-secondary my-5 py-4 text-center">

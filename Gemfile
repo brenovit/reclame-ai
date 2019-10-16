@@ -24,7 +24,8 @@ gem 'jbuilder', '~> 2.7'
 # Use Bootstrap
 gem 'bootstrap', '~> 4.0.0' 
 # Use jquery
-gem 'jquery-rails' 
+gem 'jquery-rails'
+gem 'faraday', '~> 0.17.0'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

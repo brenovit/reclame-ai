@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2019_10_15_020015) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "reclamacaos", force: :cascade do |t|
     t.string "nome"
     t.string "cep"

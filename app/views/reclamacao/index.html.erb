@@ -1,0 +1,37 @@
+<div class="container">
+    <% if @reclamacao.nil? %>
+        <div class="card text-white bg-secondary my-5 py-4 text-center">
+            <div class="card-body">
+                <p class="text-white m-0">Nenhuma reclamação registrada!</p>
+            </div>
+        </div>
+    <% else %>
+        <table class="table table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Cliente</th>
+                    <th scope="col">Titulo</th>
+                    <th scope="col">CEP</th>
+                    <th scope="col">IP</th>      
+                    <th scope="col">Data Cadastro</th>       
+                    <th scope="col">Rec. Suspeita</th>
+                    <th scope="col">Ação</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% @reclamacao.each do |rec| %>
+                    <tr>
+                        <th scope="row"><%=rec.id%></th>
+                        <td><%= rec.nome %></td>
+                        <td><%=rec.titulo%></td>
+                        <td><%=rec.cep%></td>
+                        <td><%=rec.ip%></td>
+                        <td><%=rec.created_at.strftime("%d/%m/%Y")%></td>
+                        <td><%= link_to rec.id, reclamacao_path(rec) %></td>
+                    </tr>
+                <% end %>
+            </tbody>
+        </table>
+    <% end %>
+</div>

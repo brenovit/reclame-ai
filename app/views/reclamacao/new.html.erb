@@ -1,0 +1,46 @@
+<h3>Registrar Reclamação</h3>
+<hr>
+<%= form_with html:{class:"form", role:"form"}, scope: :reclamacao, local: true do |form| %>
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <%= form.label :nome %>            
+            <%= form.text_field :nome, class: 'form-control' %>
+        </div>
+        <div class="form-group col-md-2">
+            <%= form.label :cep %>            
+            <%= form.text_field :cep, class: 'form-control' %>
+        </div>
+        <div class="form-group col-md-4">
+            <%= form.label :email %>            
+            <%= form.text_field :email, class: 'form-control' %>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <%= form.label :telefone %>
+            <%= form.text_field :telefone, 
+                class: 'form-control', type:'text', placeholder:'Digite o seu telefone de contato', maxlength:'15' %>            
+        </div>
+
+        <div class="form-group col-md-4">
+            <%= form.label :cod_pedido %>
+            <%= form.text_field :cod_pedido, 
+                class: 'form-control', type:'text', placeholder:'Digite o número do pedido', maxlength:'40' %>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <%= form.label :título %>
+        <%= form.text_field :titulo,
+            class: 'form-control', type:'text', placeholder:'Digite o título da reclamação', maxlength:'40' %>
+    </div>
+
+    <div class="form-group">
+        <%= form.label :reclamação %><br>
+        <%= form.text_area :reclamacao,  class:'form-control' %>    
+    </div>   
+
+    <%= form.submit 'Salvar', class:'btn btn-primary' %>    
+<% end %>
